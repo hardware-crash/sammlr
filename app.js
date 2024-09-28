@@ -23,9 +23,7 @@ const transactionRoutes = require('./routes/transactionRoutes');
 const userRoutes = require('./routes/userRoutes'); // If applicable
 const collectionRoutes = require('./routes/collectionRoutes'); // Ensure the path is correct
 const searchRoutes = require('./routes/searchRoutes'); // Import the search routes
-
-
-
+const adminRoutes = require('./routes/adminRoutes'); // Import Admin Routes
 
 // Apply Middlewares
 app.use(bodyParser.json());
@@ -67,7 +65,7 @@ app.use('/api/transactions', transactionRoutes); // Mount transaction routes her
 app.use('/api/user', userRoutes); // Mount user routes here
 app.use('/api/collection', collectionRoutes); // Mount the collection routes
 app.use('/api/search', searchRoutes); // Mount the search routes
-
+app.use('/api/admin', adminRoutes); // Mount admin routes here
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
